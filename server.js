@@ -8,6 +8,7 @@ const app = express();
 const dataPath = "./db/db.json";
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static("public"))
 
 app.get("/", function (req, res) {
   res.sendFile(__dirname + "/public/index.html");
