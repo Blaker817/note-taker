@@ -3,6 +3,7 @@ const express = require("express");
 const fs = require("fs");
 const { v4: uuidv4 } = require('uuid')
 const app = express();
+const PORT= process.env.PORT || 4000;
 // var cors = require("cors");
 // app.use(cors());
 const dataPath = "./db/db.json";
@@ -64,5 +65,5 @@ app.get("/assets/js/index.js", function (req, res) {
 app.get("/assets/css/styles.css", function (req, res) {
   res.sendFile(__dirname + "/public/assets/css/styles.css");
 });
-const port = 4000;
-app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+
+app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`));
